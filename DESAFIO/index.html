@@ -1,0 +1,63 @@
+<!DOCTYPE html> 
+<html lang="pt-BR"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <title>Verificador de Voto</title> 
+    
+    <style> 
+    body { 
+        font-family:Geneva, Verdana, sans-serif; 
+        color: RED;
+        font-size: 15px;
+        text-align: center; 
+        margin-top: 50px; 
+        background-color: #5F9EA0; 
+        background-image: url(https://media.istockphoto.com/id/696935130/pt/foto/complex-math-formulas-on-whiteboard-mathematics-and-science-with-economics.jpg?s=1024x1024&w=is&k=20&c=Vy1ySGXO6uFtkQQoOFbMp6Itv0O5VtTX-z52p006K_I=)
+        
+    } 
+ 
+    input { 
+        padding: 10px; 
+        font-size: 16px; 
+    } 
+ 
+    button { 
+        padding: 10px 15px; 
+        font-size: 16px; 
+        margin-left: 10px; 
+        cursor: pointer; 
+} 
+#resultado { 
+margin-top: 20px; 
+font-weight: bold; 
+color: #2a2a2a; 
+} 
+</style> 
+</head> 
+<body> 
+    <h1>VERIFIQUE SE O NÚMERO É POSITIVO OU NEGATIVO:</h1> 
+    <p>Digite o número:</p> 
+    <input type="number" id="numero" placeholder="Ex: -1"> 
+    <button onclick="verificarNumero()">Verificar</button> 
+    <p id="resultado"></p> 
+    
+<script> 
+   function verificarNumero() {
+    const valor = parseFloat(document.getElementById("numero").value);
+    let mensagem = "";
+
+    if (isNaN(valor)) {
+        mensagem = "Por favor, digite um número válido.";
+    } else if (valor > 0) {
+        mensagem = "O número é positivo.";
+    } else if (valor < 0) {
+        mensagem = "O número é negativo.";
+    } else {
+        mensagem = "O número é zero.";
+    }
+	
+    document.getElementById("resultado").innerText = mensagem;
+    } 
+</script>     
+</body> 
+</html>
